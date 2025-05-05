@@ -76,7 +76,7 @@ export default function PostDetails(props: { post: PostAndComments }) {
           {props.post.comments.map((value) => {
             const date = new Date(value.created_at);
             return (
-              <div className="mb-4 flex flex-col" key={value.id}>
+              <div className="mb-4` flex flex-col" key={value.id}>
                 <span className="font-semibold text-gray-700 text-xs">{value.user.email}</span>
                 <p className="font-light">{value.comment}</p>
                 <span className="font-extralight text-xs">
