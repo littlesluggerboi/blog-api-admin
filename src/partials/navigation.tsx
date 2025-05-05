@@ -17,7 +17,7 @@ export default function Navigation() {
         <Link
           href="/"
           className={`flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-1 p-4 border-b border-b-[#092831] font-heading text-xl font-semibold ${
-            pathname === "/" ? "active" : ""
+            pathname.startsWith("/dashboard") ? "active" : ""
           }`}
         >
           <div className="w-8">{icons.get("overview")}</div>
@@ -26,7 +26,7 @@ export default function Navigation() {
         <Link
           href="/posts"
           className={`flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-1 p-4 border-b border-b-[#092831] font-heading text-xl font-semibold ${
-            pathname === "/posts" ? "active" : ""
+            pathname.startsWith("/posts") ? "active" : ""
           }`}
         >
           <div className="w-8">{icons.get("post")}</div>
@@ -35,7 +35,7 @@ export default function Navigation() {
         <Link
           href="/comments"
           className={`flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-1 p-4 border-b border-b-[#092831] font-heading text-xl font-semibold ${
-            pathname === "/comments" ? "active" : ""
+            pathname.startsWith("/comments") ? "active" : ""
           }`}
         >
           <div className="w-8">{icons.get("comment")}</div>
@@ -44,7 +44,7 @@ export default function Navigation() {
         <Link
           href="/users"
           className={`flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-1 p-4 border-b border-b-[#092831] font-heading text-xl font-semibold ${
-            pathname === "/users" ? "active" : ""
+            pathname.startsWith("/users") ? "active" : ""
           }`}
         >
           <div className="w-8">{icons.get("user")}</div>
@@ -54,9 +54,7 @@ export default function Navigation() {
         <a
           href=""
           target="_blank"
-          className={`mt-auto flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-4 justify-between p-4 border-y border-y-[#092831] font-heading text-2xl font-semibold ${
-            pathname === "/users" ? "active" : ""
-          }`}
+          className={`mt-auto flex [&.active]:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] hover:bg-[linear-gradient(to_right,#FFF_2%,#007092_2%,#003f52)] items-center gap-4 justify-between p-4 border-y border-y-[#092831] font-heading text-2xl font-semibold `}
         >
           <span>Blogs Website</span>
           <div className="w-8">{icons.get("new window")}</div>
