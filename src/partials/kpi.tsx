@@ -1,4 +1,6 @@
-export default function Kpi(props: { label: string; value: number }) {
+import { KPI } from "@/app/lib/definitions";
+
+export default function Kpi(props:KPI) {
   return (
     <div className="bg-white p-8 rounded-xl font-text w-3xs">
       <p className="text-gray-500">{props.label}</p>

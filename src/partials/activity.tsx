@@ -1,23 +1,18 @@
 import Link from "next/link";
 import icons from "@/static_resources/icons";
-export default function Activity(props: {
-  type: string;
-  subject: string;
-  predicate: string;
-  verb: string;
-  time: string;
-}) {
+import { Event } from "@/app/lib/definitions";
+export default function Activity(props: { event: Event }) {
   return (
-    <Link href="/" className="flex gap-4 p-4 hover:bg-gray-200 font-text">
-      <div className="bg-(--warn-color) w-16 p-4 rounded-4xl h-fit">
-        {icons.get(props.type)}
+    <Link href={`/posts/${props.event.post_id}`} className="flex gap-4 p-4 hover:bg-gray-200 font-text">
+      <div className={(props.event.verb.includes("edit") ? "bg-amber-300" : "bg-green-300") + " w-12 p-3 rounded-4xl h-fit"}>
+        {icons.get(props.event.type)}
       </div>
-      <div className="mt-2">
+      <div className="mt-2 text-sm">
         <p>
-          <b>{props.subject}</b> {props.verb}{" "}
-          <q className="font-bold">{props.predicate}</q>
+          <b>{props.event.subject}</b> {props.event.verb}{" "}
+          <q className="font-bold">{props.event.predicate}</q>
         </p>
-        <p className="font-extralight italic">{props.time}</p>
+        <p className="font-extralight italic">{props.event.time}</p>
       </div>
     </Link>
   );
